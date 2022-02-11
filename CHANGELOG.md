@@ -1,3 +1,102 @@
+# [6.3.0](https://github.com/react-native-community/react-native-circleci-orb/compare/v6.2.2...v6.3.0) (2022-01-30)
+
+
+### Features
+
+* add homebrew_update parameter to toggle brew update ([#131](https://github.com/react-native-community/react-native-circleci-orb/issues/131)) ([6a7d635](https://github.com/react-native-community/react-native-circleci-orb/commit/6a7d635))
+
+## [6.2.2](https://github.com/react-native-community/react-native-circleci-orb/compare/v6.2.1...v6.2.2) (2022-01-28)
+
+
+### Bug Fixes
+
+* **android:** fix gradle build cache key ([#130](https://github.com/react-native-community/react-native-circleci-orb/issues/130) by [@fotos](https://github.com/fotos)) ([acadf02](https://github.com/react-native-community/react-native-circleci-orb/commit/acadf02))
+
+## [6.2.1](https://github.com/react-native-community/react-native-circleci-orb/compare/v6.2.0...v6.2.1) (2022-01-27)
+
+
+### Bug Fixes
+
+* **ios:** update default ios device to iPhone 11 ([#127](https://github.com/react-native-community/react-native-circleci-orb/issues/127)) ([2e3b1e0](https://github.com/react-native-community/react-native-circleci-orb/commit/2e3b1e0))
+
+# [6.2.0](https://github.com/react-native-community/react-native-circleci-orb/compare/v6.1.0...v6.2.0) (2022-01-17)
+
+
+### Features
+
+* **ios:** control if simulator starts in background ([#126](https://github.com/react-native-community/react-native-circleci-orb/issues/126)) ([08338f9](https://github.com/react-native-community/react-native-circleci-orb/commit/08338f9))
+
+# [6.1.0](https://github.com/react-native-community/react-native-circleci-orb/compare/v6.0.1...v6.1.0) (2022-01-04)
+
+
+### Features
+
+* add optional yarn_install_directory parameter ([#124](https://github.com/react-native-community/react-native-circleci-orb/issues/124)) ([3c659f9](https://github.com/react-native-community/react-native-circleci-orb/commit/3c659f9))
+
+## [6.0.1](https://github.com/react-native-community/react-native-circleci-orb/compare/v6.0.0...v6.0.1) (2021-11-19)
+
+
+### Bug Fixes
+
+* **android:** move docker android pin to JDK11 version ([#123](https://github.com/react-native-community/react-native-circleci-orb/issues/123)) ([d74d427](https://github.com/react-native-community/react-native-circleci-orb/commit/d74d427)), closes [#122](https://github.com/react-native-community/react-native-circleci-orb/issues/122)
+
+# [6.0.0](https://github.com/react-native-community/react-native-circleci-orb/compare/v5.6.2...v6.0.0) (2021-11-19)
+
+
+### Bug Fixes
+
+* **android:** use JDK11 compatible JVM options ([#122](https://github.com/react-native-community/react-native-circleci-orb/issues/122)) ([1923bcd](https://github.com/react-native-community/react-native-circleci-orb/commit/1923bcd)), closes [#120](https://github.com/react-native-community/react-native-circleci-orb/issues/120)
+
+
+### BREAKING CHANGES
+
+* **android:** this orb is now using JDK11
+
+See JDK8-->JDK11 migration notes here:
+https://discuss.circleci.com/t/android-convenience-image-moving-to-java-v11-on-august-17th/36601/4
+
+## [5.6.2](https://github.com/react-native-community/react-native-circleci-orb/compare/v5.6.1...v5.6.2) (2021-11-19)
+
+
+### Bug Fixes
+
+* **android:** pin docker image to 4.2 for JDK8 ([#121](https://github.com/react-native-community/react-native-circleci-orb/issues/121)) ([fe2898a](https://github.com/react-native-community/react-native-circleci-orb/commit/fe2898a)), closes [#120](https://github.com/react-native-community/react-native-circleci-orb/issues/120)
+
+## [5.6.1](https://github.com/react-native-community/react-native-circleci-orb/compare/v5.6.0...v5.6.1) (2021-11-19)
+
+
+### Bug Fixes
+
+* do not cache /usr/local/Homebrew ([#119](https://github.com/react-native-community/react-native-circleci-orb/issues/119)) ([597e597](https://github.com/react-native-community/react-native-circleci-orb/commit/597e597))
+
+# [5.6.0](https://github.com/react-native-community/react-native-circleci-orb/compare/v5.5.1...v5.6.0) (2021-10-22)
+
+
+### Features
+
+* **android:** Pass through the `assemble_android_test` parameter from the `android_build` job to the command ([#109](https://github.com/react-native-community/react-native-circleci-orb/issues/109) by [@ronwsmith](https://github.com/ronwsmith)) ([9f2e7fa](https://github.com/react-native-community/react-native-circleci-orb/commit/9f2e7fa))
+
+## [5.5.1](https://github.com/react-native-community/react-native-circleci-orb/compare/v5.5.0...v5.5.1) (2021-10-22)
+
+
+### Bug Fixes
+
+* **android:** Added new Android Command Line Tools for MacOS 12+ and Java 9, 10, 11 ([#114](https://github.com/react-native-community/react-native-circleci-orb/issues/114) by [@lukebrandonfarrell](https://github.com/lukebrandonfarrell)) ([aeb45fe](https://github.com/react-native-community/react-native-circleci-orb/commit/aeb45fe))
+
+# [5.5.0](https://github.com/react-native-community/react-native-circleci-orb/compare/v5.4.0...v5.5.0) (2021-07-28)
+
+
+### Features
+
+* **Android:** Add optional command-running step after the emulator starts ([#110](https://github.com/react-native-community/react-native-circleci-orb/issues/110) by [@ronwsmith](https://github.com/ronwsmith)) ([5ee8a30](https://github.com/react-native-community/react-native-circleci-orb/commit/5ee8a30))
+
+# [5.4.0](https://github.com/react-native-community/react-native-circleci-orb/compare/v5.3.0...v5.4.0) (2021-07-13)
+
+
+### Features
+
+* Make yarn cache folder configurable ([#103](https://github.com/react-native-community/react-native-circleci-orb/issues/103) by [@ronwsmith](https://github.com/ronwsmith)) ([c6ccaa1](https://github.com/react-native-community/react-native-circleci-orb/commit/c6ccaa1))
+
 # [5.3.0](https://github.com/react-native-community/react-native-circleci-orb/compare/v5.2.0...v5.3.0) (2021-06-02)
 
 

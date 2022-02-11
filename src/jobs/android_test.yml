@@ -48,11 +48,19 @@ parameters:
     type: string
     default: ""
   should_on_after_initialize:
-    description: Set this to true if you want to run a custom shell command right after yarn install. Provide the command in on_after_initialize_command
+    description: Set this to true if you want to run a custom shell command right after yarn install. Provide the command in on_after_initialize command.
     type: boolean
     default: false
   on_after_initialize:
     description: A custom command to run right after yarn install.
+    type: string
+    default: ""
+  should_on_after_emulator_start:
+    description: Set this to true if you want to run a custom shell command right after the android emulator starts. Provide the command in on_after_emulator_start command.
+    type: boolean
+    default: false
+  on_after_emulator_start:
+    description: A custom command to run right after the android emulator starts.
     type: string
     default: ""
   # For macos executor
@@ -64,6 +72,10 @@ parameters:
     description: Should we cache after brew install? Defaults to true
     type: boolean
     default: true
+  homebrew_update:
+    description: Should we run brew update? Defaults to true
+    type: boolean
+    default: true
 
 steps:
   - attach_workspace:
@@ -71,6 +83,7 @@ steps:
   - setup_macos_executor:
       node_version: <<parameters.node_version>>
       homebrew_cache: <<parameters.homebrew_cache>>
+      homebrew_update: <<parameters.homebrew_update>>
   - yarn_install:
       cache: <<parameters.yarn_cache>>
   - when:
@@ -88,6 +101,12 @@ steps:
       platform_version: <<parameters.platform_version>>
       build_tools_version: <<parameters.build_tools_version>>
       logcat_grep: <<parameters.logcat_grep>>
+  - when:
+      condition: <<parameters.should_on_after_emulator_start>>
+      steps:
+        - run:
+            name: "on_after_emulator_start"
+            command: <<parameters.on_after_emulator_start>>
   - detox_test:
       configuration: <<parameters.detox_configuration>>
       loglevel: <<parameters.detox_loglevel>>
